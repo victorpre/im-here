@@ -8,18 +8,26 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController{
+  
+  let clock = Clock()
+  
+  @IBOutlet weak var timeLabel: UILabel!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    let formatter = DateFormatter()
+    formatter.timeStyle = .short
+    let formattedTime = formatter.string(from: clock.currentTime as Date)
+    timeLabel.text = "\(formattedTime)"
+    
+   }
+  
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-
+  }
+  
 }
 
