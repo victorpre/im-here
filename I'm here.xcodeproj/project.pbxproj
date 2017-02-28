@@ -114,14 +114,14 @@
 			isa = PBXGroup;
 			children = (
 				57DC18921E64BEBA008632BF /* AppDelegate.swift */,
-				57DC18941E64BEBA008632BF /* FirstViewController.swift */,
-				57DC18DA1E64CFFE008632BF /* ThirdViewController.swift */,
-				57DC18961E64BEBA008632BF /* SecondViewController.swift */,
-				57DC18981E64BEBA008632BF /* Main.storyboard */,
 				57DC189B1E64BEBA008632BF /* Assets.xcassets */,
-				57DC189D1E64BEBA008632BF /* LaunchScreen.storyboard */,
-				57DC18A01E64BEBA008632BF /* Info.plist */,
 				57DC18DC1E64D896008632BF /* Clock.swift */,
+				57DC18941E64BEBA008632BF /* FirstViewController.swift */,
+				57DC18A01E64BEBA008632BF /* Info.plist */,
+				57DC189D1E64BEBA008632BF /* LaunchScreen.storyboard */,
+				57DC18981E64BEBA008632BF /* Main.storyboard */,
+				57DC18961E64BEBA008632BF /* SecondViewController.swift */,
+				57DC18DA1E64CFFE008632BF /* ThirdViewController.swift */,
 			);
 			path = "I'm here";
 			sourceTree = "<group>";
@@ -129,9 +129,9 @@
 		57DC18D91E64BF73008632BF /* FSCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				57DC18A91E64BF2B008632BF /* FSCalendar+Deprecated.m */,
 				57DC18A71E64BF2B008632BF /* FSCalendar.h */,
 				57DC18A81E64BF2B008632BF /* FSCalendar.m */,
-				57DC18A91E64BF2B008632BF /* FSCalendar+Deprecated.m */,
 				57DC18AA1E64BF2B008632BF /* FSCalendarAppearance.h */,
 				57DC18AB1E64BF2B008632BF /* FSCalendarAppearance.m */,
 				57DC18AC1E64BF2B008632BF /* FSCalendarCalculator.h */,
@@ -164,6 +164,7 @@
 				57DC18C71E64BF2B008632BF /* Info.plist */,
 			);
 			name = FSCalendar;
+			path = FSCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +275,7 @@
 				57DC18991E64BEBA008632BF /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		57DC189D1E64BEBA008632BF /* LaunchScreen.storyboard */ = {
@@ -282,6 +284,7 @@
 				57DC189E1E64BEBA008632BF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
