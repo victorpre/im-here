@@ -31,18 +31,30 @@
                                 <rect key="frame" x="146" y="165" width="83" height="38"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <state key="normal" title="Punch"/>
+                                <connections>
+                                    <action selector="punch:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cAe-ue-cYd"/>
+                                </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZNy-CM-emb">
+                                <rect key="frame" x="0.0" y="171" width="375" height="447"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="ZNy-CM-emb" secondAttribute="bottom" id="0lE-dS-jmm"/>
+                            <constraint firstItem="ZNy-CM-emb" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="3nr-uG-Yev"/>
                             <constraint firstItem="SSc-Zd-wlW" firstAttribute="centerX" secondItem="Y4c-6g-aJn" secondAttribute="centerX" id="G4f-QG-AqX"/>
-                            <constraint firstItem="Y4c-6g-aJn" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="80" id="Rsl-fy-IN5"/>
-                            <constraint firstItem="SSc-Zd-wlW" firstAttribute="top" secondItem="Y4c-6g-aJn" secondAttribute="bottom" id="UjA-nL-8NJ"/>
+                            <constraint firstItem="Y4c-6g-aJn" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="60" id="Rsl-fy-IN5"/>
+                            <constraint firstItem="SSc-Zd-wlW" firstAttribute="top" secondItem="Y4c-6g-aJn" secondAttribute="bottom" constant="-5" id="UjA-nL-8NJ"/>
+                            <constraint firstItem="ZNy-CM-emb" firstAttribute="top" secondItem="SSc-Zd-wlW" secondAttribute="bottom" id="cBN-e2-PFH"/>
+                            <constraint firstAttribute="trailing" secondItem="ZNy-CM-emb" secondAttribute="trailing" id="s1c-LT-KlO"/>
                             <constraint firstItem="Y4c-6g-aJn" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="s2N-a6-TOY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Punch" image="clock" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="tableView" destination="ZNy-CM-emb" id="E1n-Be-J3k"/>
                         <outlet property="timeLabel" destination="Y4c-6g-aJn" id="Hku-bk-bQA"/>
                     </connections>
                 </viewController>
