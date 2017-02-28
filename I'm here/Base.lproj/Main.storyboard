@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Punch-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="I_m_here" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,14 +27,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-Zd-wlW">
+                                <rect key="frame" x="146" y="165" width="83" height="38"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <state key="normal" title="Punch"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="SSc-Zd-wlW" firstAttribute="centerX" secondItem="Y4c-6g-aJn" secondAttribute="centerX" id="G4f-QG-AqX"/>
                             <constraint firstItem="Y4c-6g-aJn" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="80" id="Rsl-fy-IN5"/>
+                            <constraint firstItem="SSc-Zd-wlW" firstAttribute="top" secondItem="Y4c-6g-aJn" secondAttribute="bottom" id="UjA-nL-8NJ"/>
                             <constraint firstItem="Y4c-6g-aJn" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="s2N-a6-TOY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="clock" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Punch" image="clock" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="timeLabel" destination="Y4c-6g-aJn" id="Hku-bk-bQA"/>
                     </connections>
@@ -43,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Second-->
+        <!--Calendar-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="I_m_here" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +77,7 @@
                             <constraint firstItem="4YO-bV-g7a" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="PQd-CX-GDN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,8 +124,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" width="24" height="24"/>
         <image name="clock" width="24" height="24"/>
         <image name="config" width="24" height="24"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
