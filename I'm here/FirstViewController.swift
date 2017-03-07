@@ -17,6 +17,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var timeWorkedToday: UILabel!
   
   //  Overrides
   override func viewDidLoad() {
