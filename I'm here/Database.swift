@@ -60,6 +60,17 @@ class Shifts: NSObject{
     return shifts
   }
   
+  func punches() -> Array<NSDate> {
+    var punches : [NSDate] = []
+    for shift in all(){
+      punches.append(shift.beginTime!)
+      if(shift.endTime != nil){
+        punches.append(shift.endTime!)
+      }
+    }
+    return punches
+  }
+  
   func last() -> Shift {
     return all()[all().count-1]
   }

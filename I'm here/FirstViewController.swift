@@ -13,7 +13,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   let clock = Clock()
   var timer: Timer?
   let shifts = Shifts()
-  var myShifts : [Shift] = []
+  var myPunches : [NSDate] = []
   
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
@@ -29,7 +29,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateTimeLabel()
-    print(myShifts.count)
+    print(myPunches.count)
     shifts.drop()
   }
   
@@ -62,22 +62,31 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   func updateTableView() {
-    myShifts = shifts.all()
+    myPunches = shifts.punches()
     tableView.reloadData()
     
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return myShifts.count
+    return myPunches.count
+  }
+  
+  func getTimeDiff(arrivalDate: NSDate, leavingDate: NSDate){
+    var timeDiff = leavingDate.compare(arrivalDate as Date)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
-    let shift = myShifts[indexPath.row]
+    let punch = myPunches[indexPath.row]
     let formatter = DateFormatter()
-    formatter.dateFormat = "HH:mm 'at' dd/MM/yyyy"
-    var time = formatter.string(from: shift.beginTime as! Date)
-    cell.textLabel?.text = "Started at \(time)"
+    formatter.dateFormat = "HH:mm 'on' dd/MM/yyyy"
+    var time = formatter.string(from: punch as! Date)
+    if(indexPath.row % 2 == 0){
+      cell.textLabel?.text = "Started at \(time)"
+    }else{
+      cell.textLabel?.text = "Ended at \(time)"
+    }
+    
     
     return cell
   }
