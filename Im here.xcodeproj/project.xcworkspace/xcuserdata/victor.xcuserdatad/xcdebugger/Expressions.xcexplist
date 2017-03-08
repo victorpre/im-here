@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Shifts.add(time : NSDate) -&gt; Bool:Database.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(I_m_here.Shift)shift">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Shifts.isBeginning() -&gt; Bool:Database.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
