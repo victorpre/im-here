@@ -88,7 +88,23 @@ class Shifts: NSObject{
     return false
   }
   
+  func between(start: NSDate, end: NSDate) -> Array<Shift> {
+    var shifts : [Shift] = []
+    var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Shift")
+    fetchRequest.predicate = NSPredicate(format: "beginTime >= %@ AND beginTime <= %@", start, end)
+    var fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: instance, sectionNameKeyPath:nil, cacheName: nil)
 
+    do {
+      try fetchedResultController.performFetch()
+      shifts = fetchedResultController.fetchedObjects as! [Shift]
+      
+    }
+    catch let error as NSError {
+      print("Could not fetch \(error), \(error.userInfo)")
+    }
+    
+    return shifts
+  }
 }
 
 extension Date {

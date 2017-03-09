@@ -29,8 +29,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    shifts.drop()
+//    shifts.drop()
     myPunches = populateHours()
+    
     updateTimeLabel()
     updateHoursWorkedLabel()
   }
