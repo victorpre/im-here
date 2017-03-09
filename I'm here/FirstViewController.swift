@@ -29,11 +29,16 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    updateTimeLabel()
-    print(myPunches.count)
     shifts.drop()
+    myPunches = populateHours()
+    updateTimeLabel()
+    updateHoursWorkedLabel()
   }
   
+  
+  func populateHours() -> Array<NSDate> {
+    return [NSDate(),NSDate().addingTimeInterval(3600),NSDate().addingTimeInterval(7200),NSDate().addingTimeInterval(10800),NSDate().addingTimeInterval(14400),NSDate().addingTimeInterval(16200)]
+  }
   //Timer
   deinit {
     timer?.invalidate()
@@ -60,6 +65,11 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   @IBAction func punch(_ sender: Any) {
     shifts.add(time: clock.currentTime)
     updateTableView()
+    updateHoursWorkedLabel()
+  }
+  
+  func updateHoursWorkedLabel(){
+    timeWorkedToday.text = "Time worked today: \(clock.workedSeconds(dates: myPunches)/3600) hours"
   }
   
   func updateTableView() {
@@ -70,10 +80,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return myPunches.count
-  }
-  
-  func getTimeDiff(arrivalDate: NSDate, leavingDate: NSDate){
-    var timeDiff = leavingDate.compare(arrivalDate as Date)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
