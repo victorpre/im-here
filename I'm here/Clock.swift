@@ -29,12 +29,12 @@ class Clock{
 //        return Double(hoursStr)
 //    }
     
-    func workedSeconds(dates: Array<NSDate>)->Int{
-        var seconds = 0
+    func workedSeconds(dates: Array<NSDate>)->Double{
+        var seconds = 0.0
         let maxIndex = (dates.count % 2 == 0) ? dates.count : dates.count-1
         for index in stride(from: 0,to: maxIndex, by: 2) {
-            seconds = seconds + self.timeDiffInSeconds(arrivalDate: dates[index+1], leavingDate: dates[index])
+            seconds = seconds + Double(self.timeDiffInSeconds(arrivalDate: dates[index+1], leavingDate: dates[index]))
         }
-        return seconds * -1
+        return seconds * -1.0
     }
 }
