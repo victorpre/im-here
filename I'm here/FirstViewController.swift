@@ -30,10 +30,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 //    shifts.drop()
-    myPunches = populateHours()
-    
-    updateTimeLabel()
     updateHoursWorkedLabel()
+    updateTimeLabel()
+    
   }
   
   
@@ -64,17 +63,25 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   @IBAction func punch(_ sender: Any) {
-    shifts.add(time: clock.currentTime)
-    updateTableView()
-    updateHoursWorkedLabel()
+    if (shifts.add(time: clock.currentTime)){
+      updateHoursWorkedLabel()
+      updateTableView()
+    }
   }
   
   func updateHoursWorkedLabel(){
-    timeWorkedToday.text = "Time worked today: \(clock.workedSeconds(dates: myPunches)/3600) hours"
+    let start = Date().startOfDay as NSDate
+    let end = Date().endOfDay! as NSDate
+    print (start)
+    print (end)
+    myPunches = shifts.punches(start: start, end: end)
+    let time = clock.seconds2Timestamp(seconds: clock.workedSeconds(dates: myPunches))
+    
+    timeWorkedToday.text = "Time worked today: \(time)"
   }
   
   func updateTableView() {
-    myPunches = shifts.punches()
+    myPunches = shifts.punches(start: nil, end: nil)
     tableView.reloadData()
     
   }
@@ -99,8 +106,5 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     return cell
   }
 }
-
-
-
 
 
