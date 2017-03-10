@@ -20,21 +20,25 @@ class Clock{
         return Int(timeDiff.rounded(.towardZero))
     }
     
-//    func hoursWorked(arrivalDate: NSDate, leavingDate: NSDate)->Double{
-//        let seconds = self.timeDiffInSeconds(arrivalDate: arrivalDate, leavingDate: leavingDate)
-//        var hoursStr = (seconds/60)
-//        if (seconds >= 3600){
-//            hoursStr = (seconds/3600)
-//        }
-//        return Double(hoursStr)
-//    }
-    
-    func workedSeconds(dates: Array<NSDate>)->Double{
-        var seconds = 0.0
+    func workedSeconds(dates: Array<NSDate>)->Int{
+        var seconds = 0
         let maxIndex = (dates.count % 2 == 0) ? dates.count : dates.count-1
         for index in stride(from: 0,to: maxIndex, by: 2) {
-            seconds = seconds + Double(self.timeDiffInSeconds(arrivalDate: dates[index+1], leavingDate: dates[index]))
+            seconds = seconds + Int(self.timeDiffInSeconds(arrivalDate: dates[index+1], leavingDate: dates[index]))
         }
-        return seconds * -1.0
+        
+        if seconds < 0{
+            return seconds * -1
+        }
+        return seconds
+    }
+    
+    func seconds2Timestamp(seconds: Int)->String {
+        let mins:Int = seconds/60
+        let hours:Int = mins/60
+        let secs:Int = seconds%60
+        
+        let strTimestamp:String = ((hours<10) ? "0" : "") + String(hours) + ":" + ((mins<10) ? "0" : "") + String(mins) + ":" + ((secs<10) ? "0" : "") + String(secs)
+        return strTimestamp
     }
 }
