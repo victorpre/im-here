@@ -28,10 +28,10 @@ class Shifts: NSObject{
   
   func add(time: NSDate) -> Bool{
     if(isBeginning() == false){
-      print("saindo")
+//      print("saindo")
       last().endTime = time
     } else{
-      print("Entrando")
+//      print("Entrando")
       let shift = Shift(context: instance)
       shift.beginTime = time
       
@@ -46,7 +46,7 @@ class Shifts: NSObject{
   
   func commit() -> Bool {
     (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    print("Saved on DB")
+//    print("Saved on DB")
     return true
   }
   
@@ -61,9 +61,20 @@ class Shifts: NSObject{
     return shifts
   }
   
-  func punches() -> Array<NSDate> {
+  func punches(start: NSDate?, end: NSDate?) -> Array<NSDate> {
     var punches : [NSDate] = []
-    for shift in all(){
+    var shifts : [Shift] = []
+    if(start != nil && end != nil){
+      for shift in between(start: start!, end: end!){
+        shifts.append(shift)
+      }
+    }else{
+      for shift in all(){
+        shifts.append(shift)
+      }
+      
+    }
+    for shift in shifts{
       punches.append(shift.beginTime!)
       if(shift.endTime != nil){
         punches.append(shift.endTime!)
@@ -90,9 +101,11 @@ class Shifts: NSObject{
   
   func between(start: NSDate, end: NSDate) -> Array<Shift> {
     var shifts : [Shift] = []
-    var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Shift")
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Shift")
+    let sortDescriptor = NSSortDescriptor(key: "beginTime", ascending: true)
+    fetchRequest.sortDescriptors = [sortDescriptor]
     fetchRequest.predicate = NSPredicate(format: "beginTime >= %@ AND beginTime <= %@", start, end)
-    var fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: instance, sectionNameKeyPath:nil, cacheName: nil)
+    let fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: instance, sectionNameKeyPath:nil, cacheName: nil)
 
     do {
       try fetchedResultController.performFetch()
@@ -117,6 +130,14 @@ extension Date {
     components.day = 1
     components.second = -1
     return Calendar.current.date(byAdding: components, to: startOfDay)
+  }
+  
+  var firstDayOfTheMonth: Date
+  {
+    var date = Date()
+    var interval : TimeInterval = 0
+    Calendar.current.dateInterval(of: .month, start: &date, interval: &interval, for: self)
+    return date
   }
 }
 
