@@ -95,7 +95,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     let punch = myPunches[indexPath.row]
     let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm 'on' dd/MM/yyyy"
-    var time = formatter.string(from: punch as! Date)
+    let time = formatter.string(from: punch as Date)
     if(indexPath.row % 2 == 0){
       cell.textLabel?.text = "Started at \(time)"
     }else{
