@@ -15,19 +15,27 @@ class Clock{
         return NSDate()
     }
     
-    func timeDiffInSeconds(arrivalDate: NSDate, leavingDate: NSDate)->Int{
-        let timeDiff = leavingDate.timeIntervalSince(arrivalDate as Date)
+    func timeDiffInSeconds(begin: NSDate, end: NSDate)->Int{
+        let timeDiff = end.timeIntervalSince(begin as Date)
         return Int(timeDiff.rounded(.towardZero))
     }
     
     func workedSeconds(dates: Array<NSDate>)->Int{
         var seconds = 0
-        let maxIndex = (dates.count % 2 == 0) ? dates.count : dates.count-1
-        for index in stride(from: 0,to: maxIndex, by: 2) {
-            seconds = seconds + Int(self.timeDiffInSeconds(arrivalDate: dates[index+1], leavingDate: dates[index]))
+        var maxIndex = 0
+        var fromIndex = 0
+        if(dates.count % 2 == 0){
+            maxIndex = dates.count
+        }else{
+            fromIndex = 1
+            maxIndex = dates.count-1
         }
         
-        if seconds < 0{
+        for index in stride(from: fromIndex,to: maxIndex, by: 2) {
+            seconds = seconds + Int(self.timeDiffInSeconds(begin: dates[index+1], end: dates[index]))
+        }
+        print (seconds)
+        if seconds < 0 {
             return seconds * -1
         }
         return seconds
