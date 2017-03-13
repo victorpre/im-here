@@ -81,7 +81,11 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   func updateTableView() {
-    myPunches = shifts.punches(start: nil, end: nil)
+    let start = Date().startOfDay as NSDate
+    let end = Date().endOfDay! as NSDate
+    print (start)
+    print (end)
+    myPunches = shifts.punches(start: start, end: end)
     tableView.reloadData()
     
   }
@@ -96,12 +100,20 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm 'on' dd/MM/yyyy"
     let time = formatter.string(from: punch as Date)
-    if(indexPath.row % 2 == 0){
-      cell.textLabel?.text = "Started at \(time)"
+    if(myPunches.count % 2 == 0){
+      if(indexPath.row % 2 == 0){
+        cell.textLabel?.text = "Ended at \(time)"
+        
+      }else{
+        cell.textLabel?.text = "Started at \(time)"
+      }
     }else{
-      cell.textLabel?.text = "Ended at \(time)"
+      if(indexPath.row % 2 == 0){
+        cell.textLabel?.text = "Started at \(time)"
+      }else{
+        cell.textLabel?.text = "Ended at \(time)"
+      }
     }
-    
     
     return cell
   }
