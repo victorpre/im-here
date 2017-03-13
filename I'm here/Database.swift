@@ -75,10 +75,10 @@ class Shifts: NSObject{
       
     }
     for shift in shifts{
-      punches.append(shift.beginTime!)
       if(shift.endTime != nil){
         punches.append(shift.endTime!)
       }
+      punches.append(shift.beginTime!)
     }
     return punches
   }
@@ -102,9 +102,11 @@ class Shifts: NSObject{
   func between(start: NSDate, end: NSDate) -> Array<Shift> {
     var shifts : [Shift] = []
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Shift")
-    let sortDescriptor = NSSortDescriptor(key: "beginTime", ascending: true)
+    //    TODO get in descending order
+    let sortDescriptor = NSSortDescriptor(key: "beginTime", ascending: false)
     fetchRequest.sortDescriptors = [sortDescriptor]
     fetchRequest.predicate = NSPredicate(format: "beginTime >= %@ AND beginTime <= %@", start, end)
+    
     let fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: instance, sectionNameKeyPath:nil, cacheName: nil)
 
     do {
