@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class PunchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
   
   let clock = Clock()
   var timer: Timer?
@@ -24,7 +24,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     super.viewDidLoad()
     tableView.dataSource = self
     tableView.delegate = self
-    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(FirstViewController.updateTimeLabel), userInfo: nil, repeats: true)
+    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(PunchViewController.updateTimeLabel), userInfo: nil, repeats: true)
    }
   
   override func viewWillAppear(_ animated: Bool) {
