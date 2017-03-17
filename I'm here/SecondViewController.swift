@@ -44,6 +44,7 @@ class SecondViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
         }
+        print(date)
     }
 }
 
