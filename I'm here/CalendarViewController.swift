@@ -13,6 +13,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func loadView() {
@@ -30,11 +31,12 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         self.view.addSubview(calendar)
         self.calendar = calendar
         
-        let tableViewContainerView = UITableView(frame: CGRect(x: 0, y: calendar.fs_bottom + 20, width: self.view.bounds.width, height: self.view.fs_height - height - 20))
-        tableViewContainerView.backgroundColor = UIColor.white
-        
-        
-        self.view.addSubview(tableViewContainerView)
+        let tableView = UITableView(frame: CGRect(x: 0, y: calendar.fs_bottom + 20, width: self.view.bounds.width, height: self.view.fs_height - height - 20))
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = UIColor.white
+        self.view.addSubview(tableView)
+        self.tableView = tableView
         
         
         
