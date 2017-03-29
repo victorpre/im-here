@@ -12,6 +12,7 @@
 		57819D0B1E65CAAB00A767AD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57819D0A1E65CAAB00A767AD /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		57819D0F1E65CECF00A767AD /* Shift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57819D0D1E65CECF00A767AD /* Shift.xcdatamodeld */; };
 		57819D111E65DC9000A767AD /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57819D101E65DC9000A767AD /* Database.swift */; };
+		57B65D141E8B48B900B9EEE1 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B65D131E8B48B900B9EEE1 /* ReportViewController.swift */; };
 		57DC18931E64BEBA008632BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DC18921E64BEBA008632BF /* AppDelegate.swift */; };
 		57DC18951E64BEBA008632BF /* PunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DC18941E64BEBA008632BF /* PunchViewController.swift */; };
 		57DC189A1E64BEBA008632BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DC18981E64BEBA008632BF /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		57819D0A1E65CAAB00A767AD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		57819D0E1E65CECF00A767AD /* Shift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shift.xcdatamodel; sourceTree = "<group>"; };
 		57819D101E65DC9000A767AD /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; tabWidth = 2; };
+		57B65D131E8B48B900B9EEE1 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		57DC188F1E64BEBA008632BF /* Im here.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Im here.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DC18921E64BEBA008632BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57DC18941E64BEBA008632BF /* PunchViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PunchViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -93,6 +95,7 @@
 				57DC18941E64BEBA008632BF /* PunchViewController.swift */,
 				5752009C1E7F651D00FBB488 /* CalendarViewController.swift */,
 				57DC18DA1E64CFFE008632BF /* ThirdViewController.swift */,
+				57B65D131E8B48B900B9EEE1 /* ReportViewController.swift */,
 				57DC18DC1E64D896008632BF /* Clock.swift */,
 				57819D101E65DC9000A767AD /* Database.swift */,
 				57DC189D1E64BEBA008632BF /* LaunchScreen.storyboard */,
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B65D141E8B48B900B9EEE1 /* ReportViewController.swift in Sources */,
 				57DC18DB1E64CFFE008632BF /* ThirdViewController.swift in Sources */,
 				57DC18DD1E64D896008632BF /* Clock.swift in Sources */,
 				57819D0F1E65CECF00A767AD /* Shift.xcdatamodeld in Sources */,

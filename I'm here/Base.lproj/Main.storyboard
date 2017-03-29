@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Punch-->
+        <!--Ponto-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="PunchViewController" customModule="Im_here" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,7 +77,7 @@
                             <constraint firstAttribute="trailing" secondItem="ZNy-CM-emb" secondAttribute="trailing" id="xuf-G5-IN3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Punch" image="clock" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Ponto" image="clock" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="ZNy-CM-emb" id="E1n-Be-J3k"/>
                         <outlet property="timeLabel" destination="Y4c-6g-aJn" id="Hku-bk-bQA"/>
@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="746.25" y="-322.18309859154931"/>
         </scene>
-        <!--Calendar-->
+        <!--Calendário-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="CalendarViewController" customModule="Im_here" customModuleProvider="target" sceneMemberID="viewController">
@@ -128,16 +128,16 @@
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="4YO-bV-g7a" secondAttribute="bottom" constant="131" id="zZT-Y6-bmr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Calendário" image="calendar" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="864" y="326"/>
         </scene>
-        <!--Third-->
+        <!--Settings-->
         <scene sceneID="1Uu-iz-0fu">
             <objects>
-                <viewController id="h3I-iw-iZd" userLabel="Third" customClass="ThirdViewController" customModule="Im_here" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h3I-iw-iZd" userLabel="Settings" customClass="ThirdViewController" customModule="Im_here" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UE7-oh-UZy"/>
                         <viewControllerLayoutGuide type="bottom" id="rwV-fz-RQf"/>
@@ -147,11 +147,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="config" id="98S-jN-WRl"/>
+                    <tabBarItem key="tabBarItem" title="Configurações" image="config" id="98S-jN-WRl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T16-Hf-amN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="946"/>
+            <point key="canvasLocation" x="-321" y="979"/>
+        </scene>
+        <!--Report-->
+        <scene sceneID="4Jm-OB-UEl">
+            <objects>
+                <viewController title="Report" id="KLn-jn-Qqn" customClass="ReportViewController" customModule="Im_here" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BRD-DV-6DJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="baV-fP-Xlj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fd6-Mh-PzY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Estatísticas" image="report" id="Bhd-Rw-c1O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ldm-gV-TdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="392" y="979"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -166,6 +185,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="KLn-jn-Qqn" kind="relationship" relationship="viewControllers" id="IJj-6f-ack"/>
                         <segue destination="h3I-iw-iZd" kind="relationship" relationship="viewControllers" id="uQH-yA-X7d"/>
                     </connections>
                 </tabBarController>
@@ -178,5 +198,6 @@
         <image name="calendar" width="24" height="24"/>
         <image name="clock" width="24" height="24"/>
         <image name="config" width="24" height="24"/>
+        <image name="report" width="24" height="24"/>
     </resources>
 </document>
