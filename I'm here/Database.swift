@@ -134,12 +134,12 @@ extension Date {
     return Calendar.current.date(byAdding: components, to: startOfDay)
   }
   
-  var firstDayOfTheMonth: Date
-  {
-    var date = Date()
-    var interval : TimeInterval = 0
-    Calendar.current.dateInterval(of: .month, start: &date, interval: &interval, for: self)
-    return date
+  func startOfMonth() -> Date {
+    return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+  }
+  
+  func endOfMonth() -> Date {
+    return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
   }
 }
 

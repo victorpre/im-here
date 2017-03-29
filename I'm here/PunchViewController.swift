@@ -30,15 +30,15 @@ class PunchViewController: UIViewController, UITableViewDataSource, UITableViewD
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 //    shifts.drop()
+    print(shifts.all().count)
     updateHoursWorkedLabel()
     updateTimeLabel()
     
   }
   
-  
-  func populateHours() -> Array<NSDate> {
-    return [NSDate(),NSDate().addingTimeInterval(3600),NSDate().addingTimeInterval(7200),NSDate().addingTimeInterval(10800),NSDate().addingTimeInterval(14400),NSDate().addingTimeInterval(16200)]
-  }
+//  func populateHours() -> Array<NSDate> {
+//    return [NSDate(),NSDate().addingTimeInterval(3600),NSDate().addingTimeInterval(7200),NSDate().addingTimeInterval(10800),NSDate().addingTimeInterval(14400),NSDate().addingTimeInterval(16200)]
+//  }
   //Timer
   deinit {
     timer?.invalidate()

@@ -13,7 +13,7 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = "Settings"
+        self.title = "Configurações"
     }
     
     override func didReceiveMemoryWarning() {

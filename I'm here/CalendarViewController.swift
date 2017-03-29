@@ -14,11 +14,10 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var tableView: UITableView!
-    
+    let shifts = Shifts()
+    var myPunches : [NSDate] = []
     
     override func loadView() {
-        
-        
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = UIColor.groupTableViewBackground
         self.view = view
@@ -37,24 +36,24 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.backgroundColor = UIColor.white
         self.view.addSubview(tableView)
         self.tableView = tableView
-        
-        
-        
-        
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = "Calendar"
+        self.title = "Calendário"
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateTableView(date: Date())
+    }
+    
+    func updateTableView(date: Date) {
+        let start = date.startOfDay  as NSDate
+        let end =  date.endOfDay! as NSDate
+        myPunches = shifts.punches(start: start, end: end)
+        tableView.reloadData()
     }
     
     
@@ -63,19 +62,34 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
             calendar.setCurrentPage(date, animated: true)
         }
         print(date)
+        updateTableView(date: date)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return myPunches.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-
-        cell.textLabel?.text = "Yolo"
+        let punch = myPunches[indexPath.row]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm 'on' dd/MM/yyyy"
+        let time = formatter.string(from: punch as Date)
+        if(myPunches.count % 2 == 0){
+            if(indexPath.row % 2 == 0){
+                cell.textLabel?.text = "Ended at \(time)"
+                
+            }else{
+                cell.textLabel?.text = "Started at \(time)"
+            }
+        }else{
+            if(indexPath.row % 2 == 0){
+                cell.textLabel?.text = "Started at \(time)"
+            }else{
+                cell.textLabel?.text = "Ended at \(time)"
+            }
+        }
         
         return cell
     }
-
-    
 }
