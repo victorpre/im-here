@@ -4,3 +4,7 @@
 ## App to manage the amount of hours you worked a day
 
 🕘 Clock in App | Learning Swift
+
+To install dependencies:
+
+- `pod install`
