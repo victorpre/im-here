@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		240636F883D5AEB2C9793049 /* Pods_Im_here.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68D303CD2EB7A108F41754D /* Pods_Im_here.framework */; };
+		57160F8B1E8DFC55004D0110 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57160F8A1E8DFC55004D0110 /* TabBarController.swift */; };
 		5752009D1E7F651D00FBB488 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752009C1E7F651D00FBB488 /* CalendarViewController.swift */; };
 		57819D0B1E65CAAB00A767AD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57819D0A1E65CAAB00A767AD /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		57819D0F1E65CECF00A767AD /* Shift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57819D0D1E65CECF00A767AD /* Shift.xcdatamodeld */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57160F8A1E8DFC55004D0110 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5752009C1E7F651D00FBB488 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		57819D0A1E65CAAB00A767AD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		57819D0E1E65CECF00A767AD /* Shift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shift.xcdatamodel; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				57819D0D1E65CECF00A767AD /* Shift.xcdatamodeld */,
 				57DC18921E64BEBA008632BF /* AppDelegate.swift */,
 				57DC189B1E64BEBA008632BF /* Assets.xcassets */,
+				57160F8A1E8DFC55004D0110 /* TabBarController.swift */,
 				57DC18941E64BEBA008632BF /* PunchViewController.swift */,
 				5752009C1E7F651D00FBB488 /* CalendarViewController.swift */,
 				57DC18DA1E64CFFE008632BF /* ThirdViewController.swift */,
@@ -243,6 +246,7 @@
 				57B65D141E8B48B900B9EEE1 /* ReportViewController.swift in Sources */,
 				57DC18DB1E64CFFE008632BF /* ThirdViewController.swift in Sources */,
 				57DC18DD1E64D896008632BF /* Clock.swift in Sources */,
+				57160F8B1E8DFC55004D0110 /* TabBarController.swift in Sources */,
 				57819D0F1E65CECF00A767AD /* Shift.xcdatamodeld in Sources */,
 				57DC18931E64BEBA008632BF /* AppDelegate.swift in Sources */,
 				57DC18951E64BEBA008632BF /* PunchViewController.swift in Sources */,

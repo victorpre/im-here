@@ -6,5 +6,6 @@ target 'Im here' do
   use_frameworks!
   # Pods for I'm here
   pod 'SwiftDate', '~> 4.0'
+  pod "SwipeableTabBarController"
   pod 'FSCalendar'
 end

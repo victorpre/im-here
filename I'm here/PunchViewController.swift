@@ -25,7 +25,11 @@ class PunchViewController: UIViewController, UITableViewDataSource, UITableViewD
     tableView.dataSource = self
     tableView.delegate = self
     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(PunchViewController.updateTimeLabel), userInfo: nil, repeats: true)
+
+
    }
+  
+
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
